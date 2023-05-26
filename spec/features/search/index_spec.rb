@@ -15,14 +15,33 @@ RSpec.describe 'search index page' do
       visit root_path
       select "Fire Nation", from: "nation"
       click_button("Search For Members")
-
+      # within("#character-5cf5679a915ecad153ab68fd") do
         expect(page).to have_content("Name: Afiko")
+      # end
     end
-    xit 'has a list of allies and enemies' do
+    it 'has a list of allies and enemies' do
+      visit root_path
+      select "Fire Nation", from: "nation"
+      click_button("Search For Members")
+      # within("#character-5cf5679a915ecad153ab68fd") do
+        # within("#allies") do
+          expect(page).to have_content("Ozai")
+        # end
+        # within("#enemies") do
+          expect(page).to have_content("Earth Kingdom")
+        # end
+      # end
 
     end
-    xit 'lists their affiliations' do
-
+    it 'lists their affiliation' do
+      visit root_path
+      select "Fire Nation", from: "nation"
+      click_button("Search For Members")
+      # within("#character-5cf5679a915ecad153ab68fd") do
+        # within("#affiliation") do
+          expect(page).to have_content("Fire Nation Navy")
+        # end
+      # end
     end
   end
 end
