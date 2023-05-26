@@ -3,5 +3,20 @@
 </div>
 
 <% @characters.first(25).each do |character| %>
+  <div id="character-<%= character.id %>">
     Name: <%= character.name %>
+    <ul id="allies"> Allies
+      <% character.allies.each do |ally| %>
+        <li><%= ally %>
+      <% end %>
+    </ul>
+    <ul id="enemies"> Enemies
+      <% character.enemies.each do |enemy| %>
+        <li><%= enemy %>
+      <% end %>
+    </ul>
+    <div id="affliation"> 
+      Affiliation: <%= character.affiliation %>
+    </div>
+  </div>
 <% end %>
