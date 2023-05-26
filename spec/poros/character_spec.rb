@@ -20,11 +20,12 @@ RSpec.describe Character do
   describe 'initialize' do
     it 'exists and has attributes' do
       expect(@character).to be_a Character
-      expect(@character.name)
-      expect(@character.photo)
-      expect(@character.enemies)
-      expect(@character.allies)
-      expect(@character.affiliation)
+      expect(@character.id).to eq("5cf5679a915ecad153ab68cc")
+      # expect(@character.name)
+      # expect(@character.photo)
+      # expect(@character.enemies)
+      # expect(@character.allies)
+      # expect(@character.affiliation)
     end
   end
 end
