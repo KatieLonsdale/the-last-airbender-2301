@@ -1,0 +1,7 @@
+<div id="residents">
+  Residents: <%= @characters.count %>
+</div>
+
+<% @characters.first(25).each do |character| %>
+    Name: <%= character.name %>
+<% end %>
