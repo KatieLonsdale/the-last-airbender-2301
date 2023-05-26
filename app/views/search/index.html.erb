@@ -4,19 +4,32 @@
 
 <% @characters.first(25).each do |character| %>
   <div id="character-<%= character.id %>">
-    Name: <%= character.name %>
+    Name: <%= character.name %><br>
+    <% if character.photo %>
+      <img src=<%= character.photo%> alt="photo", width="100", height="auto"><br>
+    <% end %>
     <ul id="allies"> Allies
-      <% character.allies.each do |ally| %>
-        <li><%= ally %>
+      <% if character.allies.empty? %>
+        None
+      <% else %>
+        <% character.allies.each do |ally| %>
+          <li><%= ally %>
+        <% end %>
       <% end %>
     </ul>
     <ul id="enemies"> Enemies
-      <% character.enemies.each do |enemy| %>
-        <li><%= enemy %>
+      <% if character.enemies.empty? %>
+        None
+      <% else %>
+        <% character.enemies.each do |enemy| %>
+          <li><%= enemy %>
+        <% end %>
       <% end %>
     </ul>
-    <div id="affliation"> 
+    <div id="affiliation"> 
       Affiliation: <%= character.affiliation %>
     </div>
   </div>
+  <br>
+  <br>
 <% end %>
